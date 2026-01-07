@@ -1,0 +1,1 @@
+# skills-for-vibe-coder
