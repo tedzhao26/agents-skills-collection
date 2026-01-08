@@ -20,15 +20,15 @@ message: Replace console.log with logger
 
 ## Project Configuration
 
-项目级扫描需要 `sgconfig.yml` 配置文件：
+Project-level scanning requires an `sgconfig.yml` configuration file:
 
 ```yaml
-# sgconfig.yml (项目根目录)
+# sgconfig.yml (project root)
 ruleDirs:
-  - rules          # 规则目录，递归加载所有 .yml 文件
+  - rules          # Rules directory, recursively loads all .yml files
 ```
 
-典型项目结构：
+Typical project structure:
 
 ```
 my-project/
@@ -40,20 +40,20 @@ my-project/
 └── src/
 ```
 
-运行项目扫描：
+Run project scan:
 
 ```bash
-ast-grep scan              # 自动查找 sgconfig.yml
-ast-grep scan --config path/to/sgconfig.yml  # 指定配置
+ast-grep scan              # Auto-finds sgconfig.yml
+ast-grep scan --config path/to/sgconfig.yml  # Specify config
 ```
 
-> **注意**: `ast-grep scan` 命令必须有 `sgconfig.yml`，而 `ast-grep run -p` 可单独使用。
+> **Note**: `ast-grep scan` command requires `sgconfig.yml`, while `ast-grep run -p` can be used standalone.
 
 ## Rule Workflow
 
-### Lint Rule (常见)
+### Lint Rule (Common)
 
-只检查不修复，用于 CI/编辑器提示：
+Check only without fixing, used for CI/editor hints:
 
 ```yaml
 # rules/no-console-log.yml
@@ -65,15 +65,15 @@ rule:
   pattern: console.log($$$ARGS)
 ```
 
-验证：
+Verify:
 
 ```bash
 ast-grep scan -r rules/no-console-log.yml src/
 ```
 
-### Rewrite Rule (可选)
+### Rewrite Rule (Optional)
 
-需要自动修复时添加 `fix`：
+Add `fix` when auto-fix is needed:
 
 ```yaml
 id: no-console-log
@@ -85,22 +85,22 @@ rule:
 fix: logger.log($$$ARGS)
 ```
 
-应用修复：
+Apply fix:
 
 ```bash
 ast-grep scan -r rules/no-console-log.yml --update-all src/
 ```
 
-### 开发流程
+### Development Flow
 
 ```
-- [ ] 1. 用 CLI 探索 pattern: ast-grep -p 'pattern' src/
-- [ ] 2. 创建规则文件 (.yml)
-- [ ] 3. 验证: ast-grep scan -r rule.yml src/
-- [ ] 4. 如有误报 → 添加 constraints → 重新验证
+- [ ] 1. Explore pattern with CLI: ast-grep -p 'pattern' src/
+- [ ] 2. Create rule file (.yml)
+- [ ] 3. Verify: ast-grep scan -r rule.yml src/
+- [ ] 4. If false positives → add constraints → re-verify
 ```
 
-调试 AST 结构：
+Debug AST structure:
 
 ```bash
 ast-grep -p 'console.log($ARG)' --debug-query ast

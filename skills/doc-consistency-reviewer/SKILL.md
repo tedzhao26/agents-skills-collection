@@ -1,94 +1,94 @@
 ---
 name: doc-consistency-reviewer
-description: 文档一致性审核官，检查代码实现与文档说明的一致性。当用户请求审查文档与代码的一致性、检查 README/docs 是否过时、验证 API 文档准确性时使用此技能。适用于：(1) 审查 README 与实现一致性 (2) 检查 docs/ 目录文档是否过时 (3) 验证 API/配置文档准确性 (4) 生成文档一致性报告。触发词包括：文档审查、doc review、文档一致性、documentation consistency、检查文档过时、verify docs。
+description: Documentation consistency reviewer, checking consistency between code implementation and documentation. Use this skill when the user requests to review documentation and code consistency, check if README/docs are outdated, or verify API documentation accuracy. Applicable for (1) Reviewing consistency between README and implementation (2) Checking if docs/ directory documents are outdated (3) Verifying API/configuration documentation accuracy (4) Generating documentation consistency reports. Trigger words include doc review, documentation consistency, check outdated docs, verify docs.
 ---
 
 # Documentation Consistency Reviewer
 
-## 目标
+## Goal
 
-系统性找出 README + docs/ 中所有「过时」或「与实现不一致」的描述，输出 ≥30 条问题项。
+Systematically identify all descriptions in README + docs/ that are "outdated" or "inconsistent with implementation", outputting ≥30 issue items.
 
-## 核心原则
+## Core Principles
 
-1. **以代码为真** - 文档与代码冲突时，以源码/配置/合同文件为准
-2. **有证据再下结论** - 每条问题必须引用代码/配置位置作为依据
-3. **合同优先** - OpenAPI/proto/schema/TS types 视为 SSOT
-4. **安全默认收紧** - 安全相关不一致优先标记为高严重级别
+1. **Code as Truth** - When documentation conflicts with code, source code/configuration/contract files prevail
+2. **Conclusion with Evidence** - Each issue must cite code/configuration location as evidence
+3. **Contract First** - OpenAPI/proto/schema/TS types are considered SSOT
+4. **Secure Defaults** - Security-related inconsistencies are prioritized as high severity
 
-## 审核流程
+## Review Workflow
 
-### 1. 文档枚举
+### 1. Document Enumeration
 
 ```bash
-# 扫描范围
-- README.md (根目录)
-- docs/**/*.md (所有文档)
-- 合同文件: OpenAPI/proto/GraphQL schema/TS types
+# Scan Scope
+- README.md (Root directory)
+- docs/**/*.md (All documents)
+- Contract files: OpenAPI/proto/GraphQL schema/TS types
 ```
 
-### 2. 逐文档审阅
+### 2. Document-by-Document Review
 
-对每份文档：
-1. 列出关键声明/承诺/配置/接口条目
-2. 在代码中搜索对应实现
-3. 对比差异：缺失/重命名/行为不一致/默认值不一致
-4. 按模板记录问题项
+For each document:
+1. List key declarations/promises/configurations/interface items
+2. Search for corresponding implementation in code
+3. Compare differences: Missing/Renamed/Behavior Inconsistent/Default Value Inconsistent
+4. Record issue items according to template
 
-### 3. 横向交叉检查
+### 3. Horizontal Cross-Check
 
-- 从合同文件反向检查文档
-- 从配置文件反查文档
+- Check documentation reversely from contract files
+- Check documentation reversely from configuration files
 
-详细检查清单见 [references/checklist.md](references/checklist.md)
+Detailed checklist see [references/checklist.md](references/checklist.md)
 
-## 严重级别
+## Severity Levels
 
-| 级别 | 定义 | 示例 |
+| Level | Definition | Example |
 |------|------|------|
-| P0 | 安全问题/严重误导 | 文档称已启用沙箱但代码未启用 |
-| P1 | 核心功能不一致 | 按文档操作会失败 |
-| P2 | 示例不完整/命名不一致 | 不直接阻断使用 |
-| P3 | 措辞/格式/链接小问题 | 不影响功能 |
-| 待证据补充 | 有怀疑但证据不足 | 需进一步调查 |
+| P0 | Security Issue/Severe Misleading | Doc says sandbox enabled but code not enabled |
+| P1 | Core Function Inconsistency | Following doc leads to failure |
+| P2 | Incomplete Example/Naming Inconsistency | Does not directly block usage |
+| P3 | Wording/Format/Link Minor Issues | Does not affect functionality |
+| Evidence Pending | Suspected but insufficient evidence | Requires further investigation |
 
-## 输出格式
+## Output Format
 
-详细模板见 [references/output-format.md](references/output-format.md)
+Detailed template see [references/output-format.md](references/output-format.md)
 
-### 单个问题项
-
-```markdown
-### [标题]
-- **严重级别**: P0/P1/P2/P3/待证据补充
-- **位置**: `<文件路径>:<行号>`
-- **证据**:
-  - 文档: [引用]
-  - 代码: [引用]
-- **影响**: [误导后果]
-- **建议**: [最小修正]
-- **关联原则**: 以代码为真/合同优先/安全默认收紧/...
-```
-
-### 审核结论
+### Single Issue Item
 
 ```markdown
-## 审核结论
-- **结论**: 通过/有条件通过/不通过
-- **汇总**: P0:x P1:x P2:x P3:x 待补充:x
-- **修复优先级**: P0 → P1 → P2 → P3
+### [Title]
+- **Severity**: P0/P1/P2/P3/Evidence Pending
+- **Location**: `<File Path>:<Line Number>`
+- **Evidence**:
+  - Document: [Citation]
+  - Code: [Citation]
+- **Impact**: [Misleading Consequence]
+- **Suggestion**: [Minimal Fix]
+- **Related Principle**: Code as Truth/Contract First/Secure Defaults/...
 ```
 
-## 多 Agent 并行
+### Review Conclusion
 
-如需加速，可按以下维度拆分给多个 agent 并行执行：
+```markdown
+## Review Conclusion
+- **Conclusion**: Pass/Conditional Pass/Fail
+- **Summary**: P0:x P1:x P2:x P3:x Pending:x
+- **Fix Priority**: P0 → P1 → P2 → P3
+```
 
-1. **按文档类型拆分** - README、API 文档、开发指南各一个 agent
-2. **按模块拆分** - 不同功能模块的文档各一个 agent
-3. **按检查方向拆分** - 一个从文档查代码，一个从代码查文档
+## Multi-Agent Parallel
 
-汇总时需去重和统一严重级别。
+If acceleration is needed, split tasks to multiple agents by the following dimensions:
 
-## 执行
+1. **Split by Document Type** - README, API docs, Developer guides each one agent
+2. **Split by Module** - Different function modules docs each one agent
+3. **Split by Check Direction** - One checks code from doc, one checks doc from code
 
-审阅完成后，输出 `doc-consistency.md` 报告文件。
+When summarizing, deduplication and unification of severity levels are needed.
+
+## Execution
+
+After review completion, output `doc-consistency.md` report file.

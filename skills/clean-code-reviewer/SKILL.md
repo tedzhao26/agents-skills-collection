@@ -1,11 +1,11 @@
 ---
 name: clean-code-reviewer
-description: Analyze code quality based on "Clean Code" principles. Identify naming, function size, duplication, over-engineering, and magic number issues with severity ratings and refactoring suggestions. Use when the user requests code review, quality check, refactoring advice, Clean Code analysis, code smell detection, or mentions terms like 代码体检, 代码质量, 重构检查.
+description: Analyze code quality based on "Clean Code" principles. Identify naming, function size, duplication, over-engineering, and magic number issues with severity ratings and refactoring suggestions. Use when the user requests code review, quality check, refactoring advice, Clean Code analysis, code smell detection, or mentions terms like code health check, code quality, refactoring check.
 ---
 
 # Clean Code Review
 
-基于《代码整洁之道》原则，聚焦 5 个高收益检查维度。
+Based on "Clean Code" principles, focusing on 5 high-yield check dimensions.
 
 ## Review Workflow
 
@@ -13,117 +13,117 @@ description: Analyze code quality based on "Clean Code" principles. Identify nam
 Review Progress:
 - [ ] 1. Scan codebase: identify files to review
 - [ ] 2. Check each dimension (naming, functions, DRY, YAGNI, magic numbers)
-- [ ] 3. Rate severity (高/中/低) for each issue
+- [ ] 3. Rate severity (High/Medium/Low) for each issue
 - [ ] 4. Generate report sorted by severity
 ```
 
 ## Check Dimensions
 
-### 1. 命名问题【有意义的命名】
+### 1. Naming Issues [Meaningful Naming]
 
-检查标志：
-- `data1`, `temp`, `result`, `info`, `obj` 等无意义命名
-- 同一概念多种命名（`get`/`fetch`/`retrieve` 混用）
+Check flags:
+- Meaningless names like `data1`, `temp`, `result`, `info`, `obj`
+- Multiple names for same concept (mixing `get`/`fetch`/`retrieve`)
 
 ```typescript
-// ❌ 
+// ❌
 const d = new Date();
 const data1 = fetchUser();
 
-// ✅ 
+// ✅
 const currentDate = new Date();
 const userProfile = fetchUser();
 ```
 
-### 2. 函数问题【函数短小 + SRP】
+### 2. Function Issues [Small Functions + SRP]
 
-检查标志：
-- 函数超过 **100 行**
-- 参数超过 **3 个**
-- 函数做多件事
+Check flags:
+- Function exceeds **100 lines**
+- Arguments exceed **3**
+- Function does multiple things
 
 ```typescript
-// ❌ 7 个参数
+// ❌ 7 arguments
 function processOrder(user, items, address, payment, discount, coupon, notes)
 
-// ✅ 使用参数对象
+// ✅ Use parameter object
 interface OrderParams { user: User; items: Item[]; shipping: Address; payment: Payment }
 function processOrder(params: OrderParams)
 ```
 
-### 3. 重复问题【DRY】
+### 3. Duplication Issues [DRY]
 
-检查标志：
-- 相似的 if-else 结构
-- 相似的数据转换/错误处理逻辑
-- Copy-paste 痕迹
+Check flags:
+- Similar if-else structures
+- Similar data transformation/error handling logic
+- Copy-paste traces
 
-### 4. 过度设计【YAGNI】
+### 4. Over-Engineering [YAGNI]
 
-检查标志：
-- 从未为 true 的 `if (config.legacyMode)` 分支
-- 只有一个实现的接口
-- 无用的 try-catch 或 if-else
+Check flags:
+- `if (config.legacyMode)` branch that is never true
+- Interface with only one implementation
+- Useless try-catch or if-else
 
 ```typescript
-// ❌ YAGNI 违反：从未使用的兼容代码
+// ❌ YAGNI violation: Compatibility code never used
 if (config.legacyMode) {
-  // 100 行兼容代码
+  // 100 lines of compatibility code
 }
 ```
 
-### 5. 魔法数字【避免硬编码】
+### 5. Magic Numbers [Avoid Hardcoding]
 
-检查标志：
-- 裸露数字无解释
-- 硬编码字符串
+Check flags:
+- Naked numbers without explanation
+- Hardcoded strings
 
 ```typescript
-// ❌ 
-if (retryCount > 3) // 3 是什么？
-setTimeout(fn, 86400000) // 这是多久？
+// ❌
+if (retryCount > 3) // What is 3?
+setTimeout(fn, 86400000) // How long is this?
 
-// ✅ 
+// ✅
 const MAX_RETRY_COUNT = 3;
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 ```
 
 ## Severity Levels
 
-| 级别 | 标准 |
+| Level | Standard |
 |------|------|
-| 高 | 影响可维护性/可读性，应立即修复 |
-| 中 | 有改进空间，建议修复 |
-| 低 | 代码气味，可选优化 |
+| High | Affects maintainability/readability, should be fixed immediately |
+| Medium | Room for improvement, suggested fix |
+| Low | Code smell, optional optimization |
 
 ## Output Format
 
 ```markdown
-### [问题类型]: [简述]
+### [Issue Type]: [Brief Description]
 
-- **原则**: [Clean Code 原则]
-- **位置**: `文件:行号`
-- **级别**: 高/中/低
-- **问题**: [具体描述]
-- **建议**: [修复方向]
+- **Principle**: [Clean Code Principle]
+- **Location**: `File:Line Number`
+- **Level**: High/Medium/Low
+- **Issue**: [Specific Description]
+- **Suggestion**: [Fix Direction]
 ```
 
 ## References
 
 **Detailed examples**: See [references/detailed-examples.md](references/detailed-examples.md)
-- 各维度的完整案例（命名、函数、DRY、YAGNI、魔法数字）
+- Complete examples for each dimension (Naming, Functions, DRY, YAGNI, Magic Numbers)
 
 **Language patterns**: See [references/language-patterns.md](references/language-patterns.md)
-- TypeScript/JavaScript 常见问题
-- Python 常见问题
-- Go 常见问题
+- TypeScript/JavaScript common issues
+- Python common issues
+- Go common issues
 
 ## Multi-Agent Parallel
 
-按以下维度拆分给多 agent 并行：
+Split tasks to multiple agents by the following dimensions:
 
-1. **按检查维度** - 5 维度各一个 agent
-2. **按模块/目录** - 不同模块各一个 agent
-3. **按语言** - TypeScript、Python、Go 各一个 agent
+1. **By Check Dimension** - One agent for each of the 5 dimensions
+2. **By Module/Directory** - One agent for each different module
+3. **By Language** - One agent for each of TypeScript, Python, Go
 
-汇总时需去重和统一严重程度评定。
+When summarizing, deduplication and unification of severity ratings are needed.
