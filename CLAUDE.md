@@ -8,9 +8,11 @@ This is a Claude Code plugin (`vibe-coder-skills`) providing code review and ana
 
 ### Installation
 
-In Claude Code:
+In Claude Code (run separately):
 ```
 /plugin marketplace add tedzhao26/skills-for-vibe-coder
+```
+```
 /plugin install vibe-coder-skills@skills-for-vibe-coder
 ```
 

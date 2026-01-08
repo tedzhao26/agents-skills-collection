@@ -4,14 +4,19 @@ A Claude Code plugin with code review and analysis skills for Vibe Coders.
 
 ## Installation
 
-In Claude Code, run:
+In Claude Code, run these commands separately:
 
-```
-/plugin marketplace add tedzhao26/skills-for-vibe-coder
-/plugin install vibe-coder-skills@skills-for-vibe-coder
-```
+1. Add the marketplace:
+   ```
+   /plugin marketplace add tedzhao26/skills-for-vibe-coder
+   ```
 
-Restart Claude Code after installation to use the new skills.
+2. Install the plugin:
+   ```
+   /plugin install vibe-coder-skills@skills-for-vibe-coder
+   ```
+
+3. Restart Claude Code to use the new skills.
 
 ## Skills
 
