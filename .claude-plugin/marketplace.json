@@ -1,0 +1,14 @@
+{
+  "name": "skills-for-vibe-coder",
+  "owner": {
+    "name": "hylarucoder",
+    "url": "https://github.com/hylarucoder"
+  },
+  "plugins": [
+    {
+      "name": "vibe-coder-skills",
+      "source": "./",
+      "description": "Code review and analysis skills for Vibe Coders"
+    }
+  ]
+}

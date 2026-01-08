@@ -1,17 +1,49 @@
-# skills-for-vibe-coder
+# vibe-coder-skills
 
-为 Vibe Coder 量身定制的 Skill 集合。
+A Claude Code plugin with code review and analysis skills for Vibe Coders.
 
-## 安装
+## Installation
 
-```bash
-cp -r skills/* ~/.claude/skills/
-```
+In Claude Code, run these commands separately:
+
+1. Add the marketplace:
+   ```
+   /plugin marketplace add hylarucoder/skills-for-vibe-coder
+   ```
+
+2. Install the plugin:
+   ```
+   /plugin install vibe-coder-skills@skills-for-vibe-coder
+   ```
+
+3. Restart Claude Code to use the new skills.
 
 ## Skills
 
-| Skill | 作用 |
-|-------|------|
-| [ast-grep-rule-crafter](skills/ast-grep-rule-crafter) | AST 语法搜索与重写规则 |
-| [clean-code-reviewer](skills/clean-code-reviewer) | 代码质量审查 |
-| [doc-consistency-reviewer](skills/doc-consistency-reviewer) | 文档一致性检查 |
+| Skill | Purpose |
+|-------|---------|
+| [ast-grep-rule-crafter](skills/ast-grep-rule-crafter) | AST-based code search and rewrite rules using ast-grep YAML |
+| [clean-code-reviewer](skills/clean-code-reviewer) | Code quality review based on Clean Code principles |
+| [doc-consistency-reviewer](skills/doc-consistency-reviewer) | Check documentation consistency with code implementation |
+
+## Usage
+
+Skills activate automatically when you mention relevant keywords:
+
+```
+# AST-grep rules
+"Help me write an ast-grep rule to find console.log"
+"Create a lint rule for unused variables"
+
+# Code review
+"Review this code for Clean Code violations"
+"Do a code quality check on src/"
+
+# Documentation review
+"Check if README matches the implementation"
+"Review docs for consistency with code"
+```
+
+## License
+
+MIT

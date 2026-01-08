@@ -1,0 +1,18 @@
+{
+  "name": "vibe-coder-skills",
+  "version": "0.1.0",
+  "description": "Code review and analysis skills for Vibe Coders - AST-based search, Clean Code review, and documentation consistency checking",
+  "author": {
+    "name": "hylarucoder",
+    "url": "https://github.com/hylarucoder"
+  },
+  "repository": "https://github.com/hylarucoder/skills-for-vibe-coder",
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "clean-code",
+    "ast-grep",
+    "documentation",
+    "linting"
+  ]
+}
