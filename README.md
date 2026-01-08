@@ -4,14 +4,14 @@ A Claude Code plugin with code review and analysis skills for Vibe Coders.
 
 ## Installation
 
-```bash
-# Install from local path
-claude plugin add /path/to/skills-for-vibe-coder
+In Claude Code, run:
 
-# Or clone and install
-git clone https://github.com/hylarucoder/skills-for-vibe-coder.git
-claude plugin add ./skills-for-vibe-coder
 ```
+/plugin marketplace add tedzhao26/skills-for-vibe-coder
+/plugin install vibe-coder-skills@skills-for-vibe-coder
+```
+
+Restart Claude Code after installation to use the new skills.
 
 ## Skills
 

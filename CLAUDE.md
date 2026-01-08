@@ -4,10 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Claude Code plugin (`vibe-coder-skills`) providing code review and analysis skills. Install with:
+This is a Claude Code plugin (`vibe-coder-skills`) providing code review and analysis skills.
 
-```bash
-claude plugin add /path/to/skills-for-vibe-coder
+### Installation
+
+In Claude Code:
+```
+/plugin marketplace add tedzhao26/skills-for-vibe-coder
+/plugin install vibe-coder-skills@skills-for-vibe-coder
 ```
 
 ## Plugin Structure
