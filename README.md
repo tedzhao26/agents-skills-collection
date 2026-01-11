@@ -1,55 +1,83 @@
-# vibe-coder-skills
+# agents-skills-collection
 
-A Claude Code plugin with code review and analysis skills for Vibe Coders.
+A collection of Claude Code plugins with skills for code review, analysis, and Notion workflows.
 
-## Installation
+## Plugins
 
-In Claude Code, run these commands separately:
+This repository contains two separate plugins:
 
-1. Add the marketplace:
-   ```
-   /plugin marketplace add tedzhao26/agents-skills-collection
-   ```
+| Plugin | Description |
+|--------|-------------|
+| [vibe-coder-skills](#vibe-coder-skills) | Code review and analysis skills |
+| [notion-skills](#notion-skills) | Notion workspace workflows |
 
-2. Install the plugin:
-   ```
-   /plugin install vibe-coder-skills@agents-skills-collection
-   ```
+---
 
-3. Restart Claude Code to use the new skills.
+## vibe-coder-skills
 
-## Skills
+Code review and analysis skills - AST-based search, Clean Code review, and documentation consistency checking.
+
+### Installation
+
+```
+/plugin marketplace add tedzhao26/agents-skills-collection
+/plugin install vibe-coder-skills@agents-skills-collection
+```
+
+### Skills
 
 | Skill | Purpose |
 |-------|---------|
 | [ast-grep-rule-crafter](skills/ast-grep-rule-crafter) | AST-based code search and rewrite rules using ast-grep YAML |
 | [clean-code-reviewer](skills/clean-code-reviewer) | Code quality review based on Clean Code principles |
 | [doc-consistency-reviewer](skills/doc-consistency-reviewer) | Check documentation consistency with code implementation |
-| [notion](skills/notion) | Notion workspace workflows: meeting prep, research, knowledge capture, spec-to-implementation |
 
-## Usage
-
-Skills activate automatically when you mention relevant keywords:
+### Usage
 
 ```
-# AST-grep rules
 "Help me write an ast-grep rule to find console.log"
-"Create a lint rule for unused variables"
-
-# Code review
 "Review this code for Clean Code violations"
-"Do a code quality check on src/"
-
-# Documentation review
 "Check if README matches the implementation"
-"Review docs for consistency with code"
+```
 
-# Notion workflows
+---
+
+## notion-skills
+
+Notion workspace skills - meeting intelligence, research & documentation, knowledge capture, and spec-to-implementation workflows.
+
+### Installation
+
+```
+/plugin marketplace add tedzhao26/agents-skills-collection
+/plugin install notion-skills@agents-skills-collection
+```
+
+### Skills
+
+| Skill | Purpose |
+|-------|---------|
+| [notion](notion-skills/skills/notion) | Comprehensive Notion workflows |
+
+The notion skill includes 4 capabilities:
+
+| Capability | Description |
+|------------|-------------|
+| Meeting Intelligence | Prepare meeting materials with context from Notion |
+| Research & Documentation | Search, synthesize, and create structured reports |
+| Knowledge Capture | Turn conversations into wiki pages and decision records |
+| Spec to Implementation | Transform specs into tasks with progress tracking |
+
+### Usage
+
+```
 "Prep me for tomorrow's design review meeting"
 "Research our authentication approach and create a summary"
 "Save this decision to the team wiki"
 "Turn this spec into implementation tasks"
 ```
+
+---
 
 ## License
 
