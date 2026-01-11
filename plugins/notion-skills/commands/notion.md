@@ -1,4 +1,5 @@
 ---
+name: notion
 description: Notion workspace automation - meetings, research, knowledge capture, spec-to-tasks
 ---
 

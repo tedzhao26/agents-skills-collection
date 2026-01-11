@@ -1,4 +1,5 @@
 ---
+name: ast-grep-craft
 description: Create ast-grep YAML rules for code search, linting, and automated refactoring
 ---
 

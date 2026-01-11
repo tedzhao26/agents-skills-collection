@@ -1,4 +1,5 @@
 ---
+name: clean-code-review
 description: Analyze code quality using Clean Code principles - naming, function size, DRY, YAGNI, magic numbers
 ---
 
