@@ -25,6 +25,7 @@ In Claude Code, run these commands separately:
 | [ast-grep-rule-crafter](skills/ast-grep-rule-crafter) | AST-based code search and rewrite rules using ast-grep YAML |
 | [clean-code-reviewer](skills/clean-code-reviewer) | Code quality review based on Clean Code principles |
 | [doc-consistency-reviewer](skills/doc-consistency-reviewer) | Check documentation consistency with code implementation |
+| [notion](skills/notion) | Notion workspace workflows: meeting prep, research, knowledge capture, spec-to-implementation |
 
 ## Usage
 
@@ -42,6 +43,12 @@ Skills activate automatically when you mention relevant keywords:
 # Documentation review
 "Check if README matches the implementation"
 "Review docs for consistency with code"
+
+# Notion workflows
+"Prep me for tomorrow's design review meeting"
+"Research our authentication approach and create a summary"
+"Save this decision to the team wiki"
+"Turn this spec into implementation tasks"
 ```
 
 ## License
