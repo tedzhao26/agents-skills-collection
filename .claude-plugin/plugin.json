@@ -1,12 +1,12 @@
 {
   "name": "vibe-coder-skills",
   "version": "0.1.0",
-  "description": "Code review and analysis skills for Vibe Coders - AST-based search, Clean Code review, and documentation consistency checking",
+  "description": "Code review and analysis skills - AST-based search, Clean Code review, and documentation consistency checking",
   "author": {
     "name": "tedzhao26",
     "url": "https://github.com/tedzhao26"
   },
-  "repository": "https://github.com/tedzhao26/skills-for-vibe-coder",
+  "repository": "https://github.com/tedzhao26/agents-skills-collection",
   "license": "MIT",
   "keywords": [
     "code-review",

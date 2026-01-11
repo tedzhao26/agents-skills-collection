@@ -8,12 +8,12 @@ In Claude Code, run these commands separately:
 
 1. Add the marketplace:
    ```
-   /plugin marketplace add tedzhao26/skills-for-vibe-coder
+   /plugin marketplace add tedzhao26/agents-skills-collection
    ```
 
 2. Install the plugin:
    ```
-   /plugin install vibe-coder-skills@skills-for-vibe-coder
+   /plugin install vibe-coder-skills@agents-skills-collection
    ```
 
 3. Restart Claude Code to use the new skills.
