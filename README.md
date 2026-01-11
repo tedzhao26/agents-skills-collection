@@ -1,10 +1,23 @@
 # agents-skills-collection
 
-A collection of Claude Code plugins with skills for code review, analysis, and Notion workflows.
+A Claude Code plugin marketplace with skills for code review, analysis, and Notion workflows.
 
-## Plugins
+## Installation
 
-This repository contains two separate plugins:
+Add the marketplace to Claude Code:
+
+```
+/plugin marketplace add tedzhao26/agents-skills-collection
+```
+
+Then install the plugins you want:
+
+```
+/plugin install vibe-coder-skills
+/plugin install notion-skills
+```
+
+## Available Plugins
 
 | Plugin | Description |
 |--------|-------------|
@@ -17,20 +30,13 @@ This repository contains two separate plugins:
 
 Code review and analysis skills - AST-based search, Clean Code review, and documentation consistency checking.
 
-### Installation
-
-```
-/plugin marketplace add tedzhao26/agents-skills-collection
-/plugin install vibe-coder-skills@agents-skills-collection
-```
-
 ### Skills
 
 | Skill | Purpose |
 |-------|---------|
-| [ast-grep-rule-crafter](skills/ast-grep-rule-crafter) | AST-based code search and rewrite rules using ast-grep YAML |
-| [clean-code-reviewer](skills/clean-code-reviewer) | Code quality review based on Clean Code principles |
-| [doc-consistency-reviewer](skills/doc-consistency-reviewer) | Check documentation consistency with code implementation |
+| ast-grep-rule-crafter | AST-based code search and rewrite rules using ast-grep YAML |
+| clean-code-reviewer | Code quality review based on Clean Code principles |
+| doc-consistency-reviewer | Check documentation consistency with code implementation |
 
 ### Usage
 
@@ -46,20 +52,7 @@ Code review and analysis skills - AST-based search, Clean Code review, and docum
 
 Notion workspace skills - meeting intelligence, research & documentation, knowledge capture, and spec-to-implementation workflows.
 
-### Installation
-
-```
-/plugin marketplace add tedzhao26/agents-skills-collection
-/plugin install notion-skills@agents-skills-collection
-```
-
-### Skills
-
-| Skill | Purpose |
-|-------|---------|
-| [notion](notion-skills/skills/notion) | Comprehensive Notion workflows |
-
-The notion skill includes 4 capabilities:
+### Capabilities
 
 | Capability | Description |
 |------------|-------------|
@@ -78,6 +71,21 @@ The notion skill includes 4 capabilities:
 ```
 
 ---
+
+## Repository Structure
+
+```
+agents-skills-collection/
+├── marketplace.json
+├── plugins/
+│   ├── vibe-coder-skills/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/
+│   └── notion-skills/
+│       ├── .claude-plugin/plugin.json
+│       └── skills/
+└── README.md
+```
 
 ## License
 

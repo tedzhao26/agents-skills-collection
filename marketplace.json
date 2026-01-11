@@ -1,0 +1,16 @@
+{
+  "owner": "tedzhao26",
+  "url": "https://github.com/tedzhao26/agents-skills-collection",
+  "plugins": [
+    {
+      "name": "vibe-coder-skills",
+      "description": "Code review and analysis skills - AST-based search, Clean Code review, and documentation consistency checking",
+      "source": "./plugins/vibe-coder-skills"
+    },
+    {
+      "name": "notion-skills",
+      "description": "Notion workspace skills - meeting intelligence, research & documentation, knowledge capture, and spec-to-implementation workflows",
+      "source": "./plugins/notion-skills"
+    }
+  ]
+}
