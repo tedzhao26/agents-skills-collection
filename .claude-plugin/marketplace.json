@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "agents-skills-collection",
-  "description": "Collection of Claude Code plugins for code review, analysis, and Notion workspace automation",
+  "description": "Collection of Claude Code plugins for code review and analysis",
   "owner": {
     "name": "tedzhao26",
     "url": "https://github.com/tedzhao26"
@@ -17,17 +17,6 @@
       "source": "./plugins/vibe-coder-skills",
       "category": "productivity",
       "homepage": "https://github.com/tedzhao26/agents-skills-collection/tree/main/plugins/vibe-coder-skills"
-    },
-    {
-      "name": "notion-skills",
-      "description": "Notion workspace skills - meeting intelligence, research & documentation, knowledge capture, and spec-to-implementation workflows",
-      "author": {
-        "name": "tedzhao26",
-        "url": "https://github.com/tedzhao26"
-      },
-      "source": "./plugins/notion-skills",
-      "category": "productivity",
-      "homepage": "https://github.com/tedzhao26/agents-skills-collection/tree/main/plugins/notion-skills"
     }
   ]
 }

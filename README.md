@@ -1,6 +1,6 @@
 # agents-skills-collection
 
-A Claude Code plugin marketplace with skills for code review, analysis, and Notion workflows.
+A Claude Code plugin marketplace with skills for code review and analysis.
 
 ## Installation
 
@@ -10,11 +10,10 @@ Add the marketplace to Claude Code:
 /plugin marketplace add tedzhao26/agents-skills-collection
 ```
 
-Then install the plugins you want:
+Then install the plugin:
 
 ```
 /plugin install vibe-coder-skills
-/plugin install notion-skills
 ```
 
 ## Available Plugins
@@ -22,7 +21,6 @@ Then install the plugins you want:
 | Plugin | Description |
 |--------|-------------|
 | [vibe-coder-skills](#vibe-coder-skills) | Code review and analysis skills |
-| [notion-skills](#notion-skills) | Notion workspace workflows |
 
 ---
 
@@ -48,40 +46,14 @@ Code review and analysis skills - AST-based search, Clean Code review, and docum
 
 ---
 
-## notion-skills
-
-Notion workspace skills - meeting intelligence, research & documentation, knowledge capture, and spec-to-implementation workflows.
-
-### Capabilities
-
-| Capability | Description |
-|------------|-------------|
-| Meeting Intelligence | Prepare meeting materials with context from Notion |
-| Research & Documentation | Search, synthesize, and create structured reports |
-| Knowledge Capture | Turn conversations into wiki pages and decision records |
-| Spec to Implementation | Transform specs into tasks with progress tracking |
-
-### Usage
-
-```
-"Prep me for tomorrow's design review meeting"
-"Research our authentication approach and create a summary"
-"Save this decision to the team wiki"
-"Turn this spec into implementation tasks"
-```
-
----
-
 ## Repository Structure
 
 ```
 agents-skills-collection/
-├── marketplace.json
+├── .claude-plugin/
+│   └── marketplace.json
 ├── plugins/
-│   ├── vibe-coder-skills/
-│   │   ├── .claude-plugin/plugin.json
-│   │   └── skills/
-│   └── notion-skills/
+│   └── vibe-coder-skills/
 │       ├── .claude-plugin/plugin.json
 │       └── skills/
 └── README.md
