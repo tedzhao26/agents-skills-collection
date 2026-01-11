@@ -1,7 +1,7 @@
 {
   "name": "vibe-coder-skills",
-  "version": "0.1.0",
-  "description": "Code review and analysis skills - AST-based search, Clean Code review, and documentation consistency checking",
+  "version": "0.2.0",
+  "description": "Code review, analysis, and Notion workspace skills - AST-based search, Clean Code review, documentation consistency, and Notion workflows (meeting prep, research, knowledge capture, spec-to-implementation)",
   "author": {
     "name": "tedzhao26",
     "url": "https://github.com/tedzhao26"
@@ -13,6 +13,11 @@
     "clean-code",
     "ast-grep",
     "documentation",
-    "linting"
+    "linting",
+    "notion",
+    "meeting-prep",
+    "research",
+    "knowledge-capture",
+    "spec-to-implementation"
   ]
 }
