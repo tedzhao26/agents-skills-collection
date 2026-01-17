@@ -6,13 +6,13 @@ A Claude Code plugin marketplace with skills for code review and analysis.
 
 Add the marketplace to Claude Code:
 
-```
+```bash
 /plugin marketplace add tedzhao26/agents-skills-collection
 ```
 
 Then install the plugin:
 
-```
+```bash
 /plugin install vibe-coder-skills
 ```
 

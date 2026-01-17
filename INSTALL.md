@@ -6,10 +6,10 @@ This guide helps you set up Claude Code with the complete skill/plugin configura
 
 ```bash
 # 1. Add this marketplace
-claude plugins add-marketplace https://github.com/tedzhao26/agents-skills-collection
+claude plugin marketplace add https://github.com/tedzhao26/agents-skills-collection
 
 # 2. Install custom-skills plugin (your skills + agents)
-claude plugins install custom-skills
+claude plugin install custom-skills
 
 # 3. Run the full setup script below
 ```
@@ -23,44 +23,44 @@ Copy and run this to install all plugins:
 # Claude Code Full Plugin Setup
 
 # Add all marketplaces
-claude plugins add-marketplace https://github.com/anthropics/claude-plugins-official
-claude plugins add-marketplace https://github.com/LexiestLeszek/superpowers
-claude plugins add-marketplace https://github.com/anthropics/claude-code-workflows
-claude plugins add-marketplace https://github.com/jlowin/obsidian-skills
-claude plugins add-marketplace https://github.com/mettamatt/planning-with-files
-claude plugins add-marketplace https://github.com/AshKelly/claude-hud
-claude plugins add-marketplace https://github.com/daymade/daymade-skills
-claude plugins add-marketplace https://github.com/tedzhao26/agents-skills-collection
+claude plugin marketplace add https://github.com/anthropics/claude-plugins-official
+claude plugin marketplace add https://github.com/LexiestLeszek/superpowers
+claude plugin marketplace add https://github.com/anthropics/claude-code-workflows
+claude plugin marketplace add https://github.com/jlowin/obsidian-skills
+claude plugin marketplace add https://github.com/mettamatt/planning-with-files
+claude plugin marketplace add https://github.com/AshKelly/claude-hud
+claude plugin marketplace add https://github.com/daymade/daymade-skills
+claude plugin marketplace add https://github.com/tedzhao26/agents-skills-collection
 
 # Install official Anthropic plugins
-claude plugins install code-review
-claude plugins install commit-commands
-claude plugins install pr-review-toolkit
-claude plugins install agent-sdk-dev
-claude plugins install pyright-lsp
-claude plugins install explanatory-output-style
-claude plugins install greptile
-claude plugins install code-simplifier
-claude plugins install huggingface-skills
+claude plugin install code-review
+claude plugin install commit-commands
+claude plugin install pr-review-toolkit
+claude plugin install agent-sdk-dev
+claude plugin install pyright-lsp
+claude plugin install explanatory-output-style
+claude plugin install greptile
+claude plugin install code-simplifier
+claude plugin install huggingface-skills
 
 # Install third-party plugins
-claude plugins install superpowers
-claude plugins install planning-with-files
-claude plugins install claude-hud
-claude plugins install python-development
-claude plugins install unit-testing
-claude plugins install tdd-workflows
-claude plugins install obsidian
+claude plugin install superpowers
+claude plugin install planning-with-files
+claude plugin install claude-hud
+claude plugin install python-development
+claude plugin install unit-testing
+claude plugin install tdd-workflows
+claude plugin install obsidian
 
 # Install selected daymade-skills
-claude plugins install skill-creator
-claude plugins install prompt-optimizer
-claude plugins install markdown-tools
-claude plugins install mermaid-tools
+claude plugin install skill-creator
+claude plugin install prompt-optimizer
+claude plugin install markdown-tools
+claude plugin install mermaid-tools
 
 # Install from this repo
-claude plugins install vibe-coder-skills
-claude plugins install custom-skills
+claude plugin install vibe-coder-skills
+claude plugin install custom-skills
 
 echo "Done! Restart Claude Code to load all plugins."
 ```
