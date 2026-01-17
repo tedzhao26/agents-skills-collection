@@ -6,7 +6,7 @@ This guide helps you set up Claude Code with the complete skill/plugin configura
 
 ```bash
 # 1. Add this marketplace
-claude plugins add-marketplace https://raw.githubusercontent.com/tedzhao26/agents-skills-collection/refs/heads/main
+claude plugins add-marketplace https://github.com/tedzhao26/agents-skills-collection
 
 # 2. Install custom-skills plugin (your skills + agents)
 claude plugins install custom-skills
@@ -23,14 +23,14 @@ Copy and run this to install all plugins:
 # Claude Code Full Plugin Setup
 
 # Add all marketplaces
-claude plugins add-marketplace https://raw.githubusercontent.com/anthropics/claude-plugins-official/refs/heads/main
-claude plugins add-marketplace https://raw.githubusercontent.com/LexiestLeszek/superpowers/main
-claude plugins add-marketplace https://raw.githubusercontent.com/anthropics/claude-code-workflows/refs/heads/main
-claude plugins add-marketplace https://raw.githubusercontent.com/jlowin/obsidian-skills/refs/heads/main
-claude plugins add-marketplace https://raw.githubusercontent.com/mettamatt/planning-with-files/refs/heads/main
-claude plugins add-marketplace https://raw.githubusercontent.com/AshKelly/claude-hud/refs/heads/main
-claude plugins add-marketplace https://raw.githubusercontent.com/daymade/daymade-skills/refs/heads/main
-claude plugins add-marketplace https://raw.githubusercontent.com/tedzhao26/agents-skills-collection/refs/heads/main
+claude plugins add-marketplace https://github.com/anthropics/claude-plugins-official
+claude plugins add-marketplace https://github.com/LexiestLeszek/superpowers
+claude plugins add-marketplace https://github.com/anthropics/claude-code-workflows
+claude plugins add-marketplace https://github.com/jlowin/obsidian-skills
+claude plugins add-marketplace https://github.com/mettamatt/planning-with-files
+claude plugins add-marketplace https://github.com/AshKelly/claude-hud
+claude plugins add-marketplace https://github.com/daymade/daymade-skills
+claude plugins add-marketplace https://github.com/tedzhao26/agents-skills-collection
 
 # Install official Anthropic plugins
 claude plugins install code-review
