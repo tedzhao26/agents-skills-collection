@@ -1,0 +1,70 @@
+workflow: improve-graph-loop-tests
+description: Iteratively improve graph-loop test suite with Codex review
+
+nodes:
+  implement:
+    type: task
+    agent: self
+    prompt: |
+      Improve the graph-loop test suite based on review feedback.
+
+      Test file: ~/.claude/skills/graph-loop/tests/test-graph-loop.sh
+
+      Focus on:
+      - Adding missing test coverage
+      - Improving test reliability
+      - Better edge case handling
+      - Clearer test descriptions
+
+      After making improvements, run the tests to verify they pass.
+
+      Output [OUTPUT:done] when improvements are complete.
+    outputs: [done, needs_work]
+    context_files:
+      - ~/.claude/skills/graph-loop/tests/test-graph-loop.sh
+      - ~/.claude/skills/graph-loop/hooks/graph-loop-hook.sh
+      - ~/.claude/skills/graph-loop/scripts/setup-graph-loop.sh
+
+  review:
+    type: task
+    agent: codex
+    prompt: |
+      Review the graph-loop test suite for quality and completeness.
+
+      Test file: ~/.claude/skills/graph-loop/tests/test-graph-loop.sh
+
+      Evaluate:
+      1. Test coverage - are all major code paths tested?
+      2. Test quality - are tests meaningful and not just smoke tests?
+      3. Edge cases - are boundary conditions tested?
+      4. Error handling - are failure modes tested?
+      5. Code quality - is the test code clean and maintainable?
+
+      Output ONE of:
+      - P0: Critical gaps in test coverage or broken tests
+      - P1: Missing important tests or quality issues
+      - P2: Minor improvements possible but acceptable
+      - clean: Test suite is comprehensive and well-written
+
+      Provide specific feedback for any issues found.
+    outputs: [P0, P1, P2, clean]
+
+edges:
+  - from: START
+    to: implement
+
+  - from: implement
+    to: review
+    condition: "done"
+
+  - from: review
+    to: implement
+    condition: "any(P0, P1)"
+
+  - from: review
+    to: END
+    condition: "any(P2, clean)"
+
+limits:
+  max_iterations: 6
+  max_time_minutes: 30

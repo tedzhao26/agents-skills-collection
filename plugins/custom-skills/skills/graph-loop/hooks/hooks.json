@@ -1,0 +1,15 @@
+{
+  "description": "Graph-Loop skill hooks for workflow iteration control",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_SKILL_ROOT}/hooks/graph-loop-hook.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

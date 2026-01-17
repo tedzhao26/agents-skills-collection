@@ -1,0 +1,120 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "custom-skills",
+  "description": "Ted's custom Claude Code skills collection - workflow automation, planning, visualization, and productivity tools",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "agent-creator",
+      "description": "Create custom Claude Code agents (subagents). Use when creating new agents, adding agents, writing subagents, or setting up agent files.",
+      "path": "./skills/agent-creator"
+    },
+    {
+      "name": "agent-file-pattern",
+      "description": "Agent communication patterns for passing data between agents efficiently. Use when orchestrating multi-agent workflows or designing agents that accept file inputs.",
+      "path": "./skills/agent-file-pattern"
+    },
+    {
+      "name": "ai-config-admin",
+      "description": "Reference guide for AI CLI tool config locations (Claude, Codex, Gemini, Cursor). Use when finding configs, understanding config structure, or creating new skills.",
+      "path": "./skills/ai-config-admin"
+    },
+    {
+      "name": "ast-grep",
+      "description": "AST-based code search and refactoring tool. Use for code migration, bulk refactoring, renaming across codebase, or structural code transformation.",
+      "path": "./skills/ast-grep"
+    },
+    {
+      "name": "browser-automation",
+      "description": "Browser automation tools - agent-browser CLI and chrome-devtools MCP. Use for web scraping, form automation, testing flows, and debugging.",
+      "path": "./skills/browser-automation"
+    },
+    {
+      "name": "chezmoi",
+      "description": "Manage dotfiles with chezmoi for cross-machine configuration management. Use when setting up dotfiles, syncing configs across machines, or managing secrets.",
+      "path": "./skills/chezmoi"
+    },
+    {
+      "name": "config-backup",
+      "description": "Backup and manage AI CLI tool configurations with chezmoi and local fallback. Use when modifying settings, adding MCP servers, or syncing configs.",
+      "path": "./skills/config-backup"
+    },
+    {
+      "name": "excalidraw-diagram",
+      "description": "Generate Excalidraw diagrams from text content for Obsidian. Use when creating diagrams, flowcharts, mind maps in Excalidraw format.",
+      "path": "./skills/excalidraw-diagram"
+    },
+    {
+      "name": "google-workspace",
+      "description": "Google Workspace MCP usage guide. Use when working with Gmail, Google Drive, Docs, Sheets, Calendar, or Tasks.",
+      "path": "./skills/google-workspace"
+    },
+    {
+      "name": "graph-loop",
+      "description": "Execute multi-stage workflows with conditional loops, parallel execution, and quality gates through graph-based orchestration.",
+      "path": "./skills/graph-loop"
+    },
+    {
+      "name": "mcp-admin",
+      "description": "Use when managing MCP servers, debugging MCP connection failures, adding/removing MCPs, or troubleshooting AI CLI configs.",
+      "path": "./skills/mcp-admin"
+    },
+    {
+      "name": "mermaid-visualizer",
+      "description": "Transform text content into professional Mermaid diagrams for presentations and documentation. Supports flowcharts, architectures, mindmaps.",
+      "path": "./skills/mermaid-visualizer"
+    },
+    {
+      "name": "notion-to-zettel",
+      "description": "Use when syncing notes from Notion to local Zettelkasten vault. Triggers include sync notion, extract from notion, import notes from notion.",
+      "path": "./skills/notion-to-zettel"
+    },
+    {
+      "name": "obsidian-canvas-creator",
+      "description": "Create Obsidian Canvas files from text content, supporting MindMap and freeform layouts for interactive canvases.",
+      "path": "./skills/obsidian-canvas-creator"
+    },
+    {
+      "name": "pf",
+      "description": "Shortcut for file-based planning (Manus-style). Creates task_plan.md, findings.md, and progress.md for complex multi-step tasks.",
+      "path": "./skills/pf"
+    },
+    {
+      "name": "senior-devops",
+      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms. Use for pipelines, IaC, deployment automation.",
+      "path": "./skills/senior-devops"
+    },
+    {
+      "name": "team",
+      "description": "Multi-agent orchestration system dispatching tasks to specialized roles (Oracle, Librarian, Coder, Reviewer) using optimal models.",
+      "path": "./skills/team"
+    },
+    {
+      "name": "team-loop",
+      "description": "Hybrid orchestration combining team's role-based parallel dispatch with graph-loop's iterative refinement.",
+      "path": "./skills/team-loop"
+    },
+    {
+      "name": "tldr",
+      "description": "Semantic code analysis tool. Use for searching code by behavior, analyzing call graphs, finding callers, or getting LLM-optimized context.",
+      "path": "./skills/tldr"
+    },
+    {
+      "name": "zettelkasten-note",
+      "description": "Use when persisting knowledge, capturing learnings, documenting solutions, or creating reference notes in Obsidian.",
+      "path": "./skills/zettelkasten-note"
+    }
+  ],
+  "agents": [
+    {
+      "name": "codex",
+      "description": "Use for code review, generating code prototypes with diffs, or getting a second opinion on code changes. Codex excels at depth.",
+      "path": "./agents/codex.md"
+    },
+    {
+      "name": "gemini",
+      "description": "Use for large codebase analysis, cross-file pattern detection, mapping dependencies, or complex bug root cause analysis. Gemini excels at breadth.",
+      "path": "./agents/gemini.md"
+    }
+  ]
+}

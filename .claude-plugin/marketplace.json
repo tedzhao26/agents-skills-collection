@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "agents-skills-collection",
-  "description": "Collection of Claude Code plugins for code review and analysis",
+  "description": "Collection of Claude Code plugins - custom skills, agents, code review, and productivity tools",
   "owner": {
     "name": "tedzhao26",
     "url": "https://github.com/tedzhao26"
@@ -17,6 +17,17 @@
       "source": "./plugins/vibe-coder-skills",
       "category": "productivity",
       "homepage": "https://github.com/tedzhao26/agents-skills-collection/tree/main/plugins/vibe-coder-skills"
+    },
+    {
+      "name": "custom-skills",
+      "description": "Ted's custom Claude Code skills - workflow automation, multi-agent orchestration, visualization, planning, and DevOps tools. Includes codex/gemini agent definitions.",
+      "author": {
+        "name": "tedzhao26",
+        "url": "https://github.com/tedzhao26"
+      },
+      "source": "./plugins/custom-skills",
+      "category": "productivity",
+      "homepage": "https://github.com/tedzhao26/agents-skills-collection/tree/main/plugins/custom-skills"
     }
   ]
 }
